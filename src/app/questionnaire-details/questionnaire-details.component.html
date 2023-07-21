@@ -1,0 +1,17 @@
+<!-- <div *ngFor="let questionnaireDetail of questionnaireDetails">
+    <h2>{{questionnaireDetail.questionnairequestion}}</h2> -->
+
+    <form>
+        <div class="mb-3"  *ngFor="let questionnaireDetail of questionnaireDetails">
+          <label for="exampleInputEmail1" class="form-label">{{questionnaireDetail.questionnairequestion}}</label>
+          <input type="text" class="form-control" id="{{questionnaireDetail.questionnairedetid}}" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Minimum required - {{questionnaireDetail.minimumrequirement}}</div>
+        </div>
+      
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a routerLink="/listings">Back</a>
+      </form>
+    
+    <!-- </div>
+     -->

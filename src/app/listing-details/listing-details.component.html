@@ -1,0 +1,22 @@
+<div>
+    <a routerLink="/listings">Back</a>
+
+    <h2>{{listing.listingId}}</h2>
+    <h2>{{listing.listingDescription}}</h2>
+    <h2>{{listing.listingStartDate}}</h2>
+    <h2>{{listing.listingEndDate}}</h2>
+    <h2>{{listing.isActive}}</h2>
+    <a routerLink="/questionnaire/{{listing.listingId}}">Fill Questionnaire</a>
+</div>
+
+
+<a routerLink="/listings">Back</a>
+
+<div class="row g-3">
+    <div class="col">
+      <input type="txtListingDescription" class="form-control" placeholder="Job Name" aria-label="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    </div>
+  </div>

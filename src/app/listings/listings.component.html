@@ -1,0 +1,107 @@
+<!-- 
+<div>
+  <div class="" *ngFor="let listing of listings">
+<a routerLink="/listings/{{listing.listingId}}">{{listing.listingName}}</a>
+  </div>
+</div> -->
+
+
+
+
+
+<!-- <div class="container-fluid">
+<div class="accordion" id="accordionExample" >
+  <div class="accordion-item" *ngFor="let listing of listings"> 
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        {{listing.listingName}} - <span class="badge rounded-pill text-bg-info">Salary - ${{listing.salary}}</span>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse hide" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Description:
+        <hr>
+        {{listing.listingDescription}}
+        <hr>
+        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          Link with href
+        </a>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              {{listing.listingDescription}}
+            </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a routerLink="/listings/{{listing.listingId}}">Apply</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div> -->
+
+
+
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action" aria-current="true" *ngFor="let listing of listings">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{listing.listingName}}</h5>
+      <small>3 days ago</small>
+      
+
+    </div>
+   
+    <div class="d-flex w-100 justify-content-between">
+    
+    <p class="mb-1"><span class="badge rounded-pill text-bg-info">Salary - ${{listing.salary}}</span></p>
+    <small>Location - Florida, Orlando [Hybrid]</small>
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#{{listing.listingId}}" role="button" aria-controls="offcanvasExample">
+      More Details
+    </a>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="{{listing.listingId}}" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        {{listing.listingDescription}}
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          What would you like to Do Today?
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/questionnaire-details/{{listing.listingId}}">Apply</a></li>
+          <li><a class="dropdown-item" href="#">Save</a></li>
+          <li><a class="dropdown-item" href="#">Ignore</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+  </a>
+
+
+
+  
+</div>

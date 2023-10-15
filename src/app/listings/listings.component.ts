@@ -23,15 +23,17 @@ ngOnInit(): void {
   //   err => console.error('Observer got an error: ' + err),
   //   () => console.log('Observer got a complete notification')
   //   );
-//   this.listingService.getListings().subscribe(
-//     listings => {
-//       console.log(listings);
-// this.listings = listings;
-// console.log('listings Data ' + this.listings);
+  this.listingService.getListings().subscribe(
+    listings => {
+      console.log(listings);
+this.listings = listings;
+console.log('listings Data ' + this.listings);
 
-// //this.listings = fakeListings;
-// console.log('Fake Listings Data ' + this.listings);
-//     });
+//this.listings = fakeListings;
+console.log('Fake Listings Data ' + this.listings);
+    });
+
+ //this.listingService.getListingsForUser();
     
 
     // subscribe(
@@ -40,7 +42,7 @@ ngOnInit(): void {
     //   () => console.log('Observer got a complete notification')
     // );
 
-    this.listings = fakeListings;
+    //this.listings = fakeListings;
 }
 
 }

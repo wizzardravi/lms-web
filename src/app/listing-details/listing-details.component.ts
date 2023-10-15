@@ -10,7 +10,7 @@ import { Listing } from '../interfaces';
 })
 export class ListingDetailsComponent implements OnInit{
 
-  listing: Listing =  { listingId: "1", listingName: "hello", listingStartDate : "",salary:1, listingEndDate: "", isActive : true };
+  listing: Listing =  { };
   constructor(private route:ActivatedRoute){
    
   }

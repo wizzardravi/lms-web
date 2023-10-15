@@ -2,15 +2,51 @@
     <h2>{{questionnaireDetail.questionnairequestion}}</h2> -->
 
     <form>
-        <div class="mb-3"  *ngFor="let questionnaireDetail of questionnaireDetails">
-          <label for="exampleInputEmail1" class="form-label">{{questionnaireDetail.questionnairequestion}}</label>
-          <input type="text" class="form-control" id="{{questionnaireDetail.questionnairedetid}}" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">Minimum required - {{questionnaireDetail.minimumrequirement}}</div>
+        <!-- <div class="mb-3"  *ngFor="let questionnaireDetail of questionnaireDetails">
+          <label for="exampleInputEmail1" class="form-label">{{questionnaireDetail.questionnaireQuestion}}</label>
+          <input type="text" class="form-control" id="{{questionnaireDetail.questionnaireDetId}}" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Minimum required - {{questionnaireDetail.minimumRequirement}}</div>
+        </div> -->
+      
+      <div *ngFor ="let questionnaireDetail of questionnaireDetails" >
+        <div *ngIf= "questionnaireDetail.htmlElementId == '1'">
+          <div class="mb-3">
+              <label for="lblListingName" class="form-label">{{questionnaireDetail.questionnaireQuestion}}</label>
+              <!-- <input type="text" disabled="true" class="form-control" [(ngModel)]="questionnaireDetail.questionnaireQuestion" id="txtQuestionnaireQuestion" placeholder="Type your question"> -->
+              <input type="text"  class="form-control" id="txtQuestionnaireQuestion" placeholder="Type your Answer">
+            </div>
         </div>
-      
-      
+        <div *ngIf= "questionnaireDetail.htmlElementId == '2'">
+            <label for="lblListingName" class="form-label">{{questionnaireDetail.questionnaireQuestion}}</label>
+              <select class="form-select" aria-label="ddlHtmlElementTypes" >
+  <option *ngFor="let questionnaireDetOp of questionnaireDetOps" value="questionnaireDetOp.questionnaireDetOptId">{{questionnaireDetOp.questionnaireDetOptName}}</option></select>
+        
+        
+        </div>
+          
+          <div *ngIf= "questionnaireDetail.htmlElementId == '3'">
+            <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)] = "questionnaireDetail.questionnaireQuestion">
+                  <label class="form-check-label" for="gridCheck">
+                    {{questionnaireDetail.questionnaireQuestion}}
+                  </label>
+                </div>
+              </div>
+          </div>
+          <div *ngIf= "questionnaireDetail.htmlElementId == '4'">
+            <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="gridCheck" [(ngModel)] = "questionnaireDetail.questionnaireQuestion">
+                  <label class="form-check-label" for="gridCheck">
+                    {{questionnaireDetail.questionnaireQuestion}}
+                  </label>
+                </div>
+              </div>
+          </div>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a routerLink="/listings">Back</a>
+        <!-- <a routerLink="/listings">Back</a> -->
       </form>
     
     <!-- </div>

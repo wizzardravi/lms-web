@@ -1,8 +1,8 @@
 {
     "/api/*":{
-        "target":"https://localhost:44377",
+        "target":"http://listmanagementapi.com",
         "secure": false,
-        "logLlevel":"debug",
+        "logLevel":"debug",
         "changeOrigin": true
     }
 }

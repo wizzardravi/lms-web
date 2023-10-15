@@ -5,6 +5,14 @@ import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 import { ListingsComponent } from './listings/listings.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
@@ -13,6 +21,11 @@ import { EditListingComponent } from './edit-listing/edit-listing.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateQuestionnaireComponent } from './create-questionnaire/create-questionnaire.component';
 import { QuestionnaireDetailsComponent } from './questionnaire-details/questionnaire-details.component';
+import { environment } from 'src/environments/environment';
+import { HomeComponent } from './home/home.component';
+import { CreateQuestionnaireDetailsComponent } from './create-questionnaire-details/create-questionnaire-details.component';
+import { CreateQuestionnaireDetOpsComponent } from './create-questionnaire-det-ops/create-questionnaire-det-ops.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +37,22 @@ import { QuestionnaireDetailsComponent } from './questionnaire-details/questionn
     EditListingComponent,
     CreateListingComponent,
     CreateQuestionnaireComponent,
-    QuestionnaireDetailsComponent
+    QuestionnaireDetailsComponent,
+    HomeComponent,
+    CreateQuestionnaireDetailsComponent,
+    CreateQuestionnaireDetOpsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

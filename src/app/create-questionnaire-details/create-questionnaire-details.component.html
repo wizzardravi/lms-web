@@ -1,0 +1,72 @@
+
+  
+  <div class="container-fluid">
+<label>Select Questionnaire</label>
+    <select class="form-select" aria-label="ddlQuestionnaire"  [(ngModel)] = "questionnaireDetails.questionnaireId">
+        <option *ngFor="let questionnaire of questionnaires"  [value]="questionnaire.questionnaireId">{{questionnaire.questionnaireName}}</option>
+      </select>
+
+
+    <label>Select Question Display Type </label>  
+      <select class="form-select" aria-label="ddlHtmlElementTypes"  [(ngModel)] = "questionnaireDetails.htmlElementId">
+        <option *ngFor="let htmlElementType of htmlElementTypes"  [value]="htmlElementType.htmlElementId">{{htmlElementType.htmlElementName}}</option>
+      </select>
+    
+
+<div *ngIf= "questionnaireDetails.htmlElementId == '1'">
+      <div class="mb-3">
+          <label for="lblListingName" class="form-label">Questionnaire Question</label>
+          <input type="text" class="form-control" [(ngModel)]="questionnaireDetails.questionnaireQuestion" id="txtQuestionnaireQuestion" placeholder="Type your question">
+        </div>
+    </div>
+    <div *ngIf= "questionnaireDetails.htmlElementId == '2'">
+        <label for="lblListingName" class="form-label">Questionnaire Question</label>
+          <input type="text" class="form-control" [(ngModel)]="questionnaireDetails.questionnaireQuestion" id="txtQuestionnaireQuestion" placeholder="Type your question">
+<div>
+    <label>Create options to your question</label>
+          <input type="text" class="form-control" [(ngModel)]="questionnaireDetOps.questionnaireDetOptName" id="txtQuestionnaireQuestion" placeholder="Enter option for select box">
+          <button type="submit" (click)="AddQuestionnaireDetOpt(questionnaireDetOps)" class="btn btn-info">Add Option</button>
+        </div>
+    <div *ngFor="let questionnaireDetOp of questionnaireDetOpsArr"><label>{{questionnaireDetOp.questionnaireDetOptName}}</label>
+    
+    </div>
+      </div>
+      <div *ngIf= "questionnaireDetails.htmlElementId == '3'">
+        <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)] = "questionnaireDetails.questionnaireQuestion">
+              <label class="form-check-label" for="gridCheck">
+                Is Active
+              </label>
+            </div>
+          </div>
+      </div>
+      <div *ngIf= "questionnaireDetails.htmlElementId == '4'">
+        <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="gridCheck" [(ngModel)] = "questionnaireDetails.questionnaireQuestion">
+              <label class="form-check-label" for="gridCheck">
+                Is Active
+              </label>
+            </div>
+          </div>
+      </div>
+
+  
+    
+      <div class="mb-3">
+        <label for="lblListingName" class="form-label">Questionnaire Question</label>
+        <input type="text" class="form-control" [(ngModel)]="questionnaireDetails.minimumRequirement" id="txtMinReq" placeholder="Min Requirement?">
+      </div>
+
+      <div class="mb-3">
+        <label for="lblListingName" class="form-label">Questionnaire Question</label>
+        <input type="text" class="form-control" [(ngModel)]="questionnaireDetails.additionalDetails" id="txtAdditionalDet" placeholder="Additional text">
+      </div>
+  
+
+  
+    <div class="col-12">
+      <button type="submit" (click)="saveQuestionnaireDetails(questionnaireDetails)" class="btn btn-primary">Save Questionnaire</button>
+    </div>
+  </div>

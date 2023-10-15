@@ -8,6 +8,10 @@ import { MyListingsComponent } from './my-listings/my-listings.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { CreateQuestionnaireComponent } from './create-questionnaire/create-questionnaire.component';
 import { QuestionnaireDetailsComponent } from './questionnaire-details/questionnaire-details.component';
+import { CreateQuestionnaireDetailsComponent } from './create-questionnaire-details/create-questionnaire-details.component';
+import { CreateQuestionnaireDetOpsComponent } from './create-questionnaire-det-ops/create-questionnaire-det-ops.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: 'listings', component: ListingsComponent, pathMatch:'full'},
@@ -19,7 +23,11 @@ const routes: Routes = [
   {path: 'questionnaire-details/:id', component: QuestionnaireDetailsComponent},
   {path: 'listings/:id', component: ListingsComponent},
   {path: 'create-questionnaire', component: CreateQuestionnaireComponent},
-  {path:'', redirectTo: '/listings', pathMatch:'full'}
+  {path: 'create-ques-details', component: CreateQuestionnaireDetailsComponent},
+  {path: 'create-ques-det-ops', component: CreateQuestionnaireDetOpsComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path:'', redirectTo: '/home', pathMatch:'full'}
 ];
 
 @NgModule({

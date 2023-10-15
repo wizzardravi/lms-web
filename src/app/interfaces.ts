@@ -2,24 +2,44 @@ export interface Listing {
     listingId?: string,
     listingName?: string,
     listingDescription?: string,
-    salary?:number,
+    minSalary?:number,
+    maxSalary?:number,
+    location?:string,
     listingStartDate?: string,
     listingEndDate?: string,
     isActive?: boolean
+    userId?:string
 }
 
 export interface Questionnaire{
-   questionnaireid? : string,
-   questionnairename? : string, 
-   listingid?:string,
+   questionnaireId? : string,
+   questionnaireName? : string, 
+   listingId?:string,
    isQuestionnaireManadatory?:boolean
 }
 
 
 export interface QuestionnaireDetails{
-    questionnairedetid? : string,
-    questionnaireid? : string,
-    questionnairequestion? : string, 
-    minimumrequirement?:string,
-    additionaldetails?:string
+    questionnaireDetId? : string,
+    questionnaireId? : string,
+    htmlElementId? : string, 
+    questionnaireQuestion?:string,
+    minimumRequirement?:number,
+    additionalDetails?:string,
+ }
+
+ export interface QuestionnaireDetailOptions{
+    questionnaireDetOptId? : string,
+    questionnaireDetId? : string,
+    questionnaireDetOptName? : number
+ }
+
+ export interface HtmlElementTypes{
+   htmlElementId?:string,
+   htmlElementName?:string,
+   htmlElementDesc?:string
+ }
+
+ export interface User{
+
  }

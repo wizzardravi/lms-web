@@ -1,139 +1,82 @@
-import { Listing, Questionnaire, QuestionnaireDetails } from "./interfaces";
+import { Listing, Questionnaire, QuestionnaireDetailOptions, QuestionnaireDetails } from "./interfaces";
 
 
 
 export const fakeListings: Listing[] = 
 [
     {
-    listingId:"1",
-    listingName:"Full Stack Angular .NET Lead",
-    listingDescription:"Full Stack Angular .NET Lead Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-    salary:6200,
-    listingStartDate:"07/18/2023",
-    listingEndDate:"08/18/2023",
-    isActive:true
+      listingId: "1",
+      listingName: "Full Stack .Net Developer",
+      listingDescription: "Hybrid Work Environment: 40% in-office and up to 60% work-from-home, if desired. Must live within commutable distance from our officeJob Summary\r\n\r\nAs part of a development technology team, individual analyzes business requirements and problems and drives research to design quality technical solutions. This individual will be involved in portions of the full systems life cycle (based on experience/skills) and is responsible for designing, coding, testing, implementing, maintaining and supporting application software that is delivered on time and within budget. Handles complex problems independently and demonstrates analytical thinking. Is able to make judgements and recommendations based on the analysis and interpretation of data.",
+      minSalary: 110000,
+      maxSalary: 120000,
+      location: "Memphis, TN",
+      listingStartDate: "2023-08-07T00:00:00",
+      listingEndDate: "2023-09-10T00:00:00",
+      isActive: false
     },
     {
-        listingId:"3",
-    listingName:"Full Stack Angular JAVA Lead",
-    listingDescription:"Full Stack Angular JAVA Lead Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-    salary:6300,
-    listingStartDate:"07/19/2023",
-    listingEndDate:"07/19/2023",
-    isActive:true
+      listingId: "2",
+      listingName: "Full Stack Java Developer",
+      listingDescription: "We are seeking an experienced full stack software engineer with strong C# skills to join our team, specifically to design and develop software for medical devices. The ideal candidate will have a passion for building robust and scalable software and will be able to work on both front-end and back-end development tasks.About PhilipsWe are a health technology company. We built our entire company around the belief that every human matters, and we won't stop until everybody everywhere has access to the quality healthcare that we all deserve. Do the work of your life to help the lives of others. • Learn more about our business.• Discover our rich and exciting history.• Learn more about our purpose.If you’re interested in this role and have many, but not all, of the experiences needed, we encourage you to apply. You may still be the right candidate for this or other opportunities at Philips. Learn more about our commitment to diversity and inclusion here.",
+      minSalary: 109000,
+      maxSalary: 200000,
+      location: "Latham",
+      listingStartDate: "2023-09-09T00:00:00",
+      listingEndDate: "2023-10-11T00:00:00",
+      isActive: true
     },
     {
-        listingId:"4",
-        listingName:"Oracle Administrator",
-        listingDescription:"Oracle Administrator Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-        salary:7500,
-        listingStartDate:"07/18/2023",
-        listingEndDate:"08/18/2023",
-        isActive:true
-        },
-        {
-            listingId:"5",
-        listingName:"Sales Force Architect",
-        listingDescription:"Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-        salary:8200,
-        listingStartDate:"07/19/2023",
-        listingEndDate:"07/19/2023",
-        isActive:true
-        },
-        {
-            listingId:"6",
-            listingName:"MuleSoft Developer",
-            listingDescription:"MuleSoft Developer Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-            salary:5200,
-            listingStartDate:"07/18/2023",
-            listingEndDate:"08/18/2023",
-            isActive:true
-            },
-            {
-                listingId:"7",
-            listingName:"Hana Developer",
-            listingDescription:"Hana Developer Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-            salary:4800,
-            listingStartDate:"07/19/2023",
-            listingEndDate:"07/19/2023",
-            isActive:true
-            },
-            {
-                listingId:"8",
-                listingName:"SAP Architect",
-                listingDescription:"SAP Architect Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-                salary:8800,
-                listingStartDate:"07/18/2023",
-                listingEndDate:"08/18/2023",
-                isActive:true
-                },
-                {
-                    listingId:"9",
-                listingName:"Microsoft Business Intelligence",
-                listingDescription:"MSBI Some desc for job roles, responsibilities, day to day tasks, required skillset...",
-                salary:9200,
-                listingStartDate:"07/19/2023",
-                listingEndDate:"07/19/2023",
-                isActive:true
-                }
-]
+      listingId: "3",
+      listingName: "Data Architect",
+      listingDescription: "This role is for data archicitent to analyze the sql database events for performance tuning",
+      minSalary: 140000,
+      maxSalary: 180000,
+      location: "Tampa, FL",
+      listingStartDate: "2023-08-07T00:00:00",
+      listingEndDate: "2023-08-09T00:00:00",
+      isActive: true
+    },
+    {
+      listingId: "4",
+      listingName: "Oracle Speacialist",
+      listingDescription: "Database Expert",
+      minSalary: 100000,
+      maxSalary: 200000,
+      location: "A",
+      listingStartDate: "2023-07-22T11:58:24.537",
+      listingEndDate: "2023-07-22T11:58:24.537",
+      isActive: true
+    }
+  ]
 
 export const fakeQuestionnaire: Questionnaire[] = 
 [
     {
-    questionnaireid : "1",
-    questionnairename : "Full Stack .Net", 
-    listingid:"1",
-    isQuestionnaireManadatory:true
-},
-{
-    questionnaireid : "2",
-    questionnairename : "Full Stack Java", 
-    listingid:"3",
-    isQuestionnaireManadatory:true
-},
-{
-    questionnaireid : "3",
-    questionnairename : "Oracle Administrator", 
-    listingid:"4",
-    isQuestionnaireManadatory:true
-},
-{
-    questionnaireid : "5",
-    questionnairename : "Sales Force Architect", 
-    listingid:"5",
-    isQuestionnaireManadatory:true
-}
-]
+      questionnaireId: "1",
+      questionnaireName: ".NET FULL STACK",
+      listingId: "1",
+      isQuestionnaireManadatory: true
+    }
+  ]
 
 export const fakeQuestionnaireDetails: QuestionnaireDetails[] = 
 [
     {
-        questionnairedetid : "1",
-        questionnaireid : "1",
-        questionnairequestion : "How many years of .NET experience do you have?", 
-        minimumrequirement:"5",
-        additionaldetails:"This position requires a minimum of 5 years .net application debug, develop and maintain experience."
-},
-{
-        questionnairedetid : "2",
-        questionnaireid : "1",
-        questionnairequestion : "How many years of Angular experience do you have?", 
-        minimumrequirement:"5",
-        additionaldetails:"This position requires a minimum of 5 years Angular debug, develop and maintain experience."
-},
-{
-    questionnairedetid : "3",
-    questionnaireid : "3",
-    questionnairequestion : "How many years of Java experience do you have?", 
-    minimumrequirement:"5",
-    additionaldetails:"This position requires a minimum of 9 years .net application debug, develop and maintain experience."
-},
-{
-    questionnairedetid : "4",
-    questionnaireid : "3",
-    questionnairequestion : "How many years of Angular experience do you have?", 
-    minimumrequirement:"5",
-    additionaldetails:"This position requires a minimum of 9 years Angular debug, develop and maintain experience."
+        questionnaireDetId : "1",
+        questionnaireId : "1",
+        questionnaireQuestion : "How many years of .NET experience do you have?", 
+        minimumRequirement:5,
+        htmlElementId:"1",
+        additionalDetails:"This position requires a minimum of 5 years .net application debug, develop and maintain experience."
+}
+]
+
+export const fakeQuestionnaireDetOps: QuestionnaireDetailOptions[] = 
+[
+    {
+        questionnaireDetId : "1",
+        questionnaireDetOptId : "1",
+        questionnaireDetOptName : 2022
 }
 ]

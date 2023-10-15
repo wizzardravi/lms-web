@@ -1,31 +1,76 @@
-<h3>Post Job List</h3>
 
-<div class="container-fluid">
+
+
+
+
+
+  <div class="card">
+    <div class="card-header">
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/listings">Jobs</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Create Jobs</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Job Posting</h5>
+      <!-- <div class="container-fluid"> -->
+        <div class="mb-3">
+            <label for="lblListingName" class="form-label">Listing Name</label>
+            <input type="text" class="form-control" [(ngModel)]="listing.listingName" id="txtListingName" placeholder="What is this job role for?">
+          </div>
     <div class="mb-3">
-        <label for="lblListingName" class="form-label">Listing Name</label>
-        <input type="text" class="form-control" id="txtListingName" placeholder="What is this job role for?">
+        <label for="lblListingDescription" class="form-label">Listing Description</label>
+        <textarea class="form-control" id="txtListingDescription" [(ngModel)] = "listing.listingDescription" placeholder="Specify brief details about listing." rows="5" cols="20"></textarea>
       </div>
-<div class="mb-3">
-    <label for="lblListingDescription" class="form-label">Listing Description</label>
-    <textarea class="form-control" id="txtListingDescription" placeholder="Specify brief details about listing." rows="5" cols="20"></textarea>
+      <div class="row">
+        <div class="col-6">
+        <label for="lblStartDate" class="form-label">Start Date</label>
+        <input type="date" [(ngModel)] = "listing.listingStartDate" class="form-control" id="dtStartDate">
+      </div>
+      <div class="col-6">
+        <label for="lblEndDate" class="form-label">End Date</label>
+        <input type="date" [(ngModel)] = "listing.listingEndDate" class="form-control" id="dtEndDate">
+      </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)] = "listing.isActive">
+          <label class="form-check-label" for="gridCheck">
+            Is Active
+          </label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="lblMinSalary>" class="form-label">Min Salary</label>
+        <input type="number" [(ngModel)] = "listing.minSalary" class="form-control" id="txtMinSalary">
+      </div>
+      <div class="mb-3">
+        <label for="lblMaxSalary" class="form-label">Max Salary</label>
+        <input type="number" [(ngModel)] = "listing.maxSalary" class="form-control" id="txtMaxSalary">
+      </div>
+      <div class="mb-3">
+        <label for="lblLocation" class="form-label">Location</label>
+        <input type="text" [(ngModel)] = "listing.location" class="form-control" id="txtLocation">
+      </div>
+      
+    
+       
+     
+    <!-- </div> -->
   </div>
-  <div class="mb-3">
-    <label for="lblStartDate" class="form-label">Start Date</label>
-    <input type="date" class="form-control" id="dtStartDate">
-  </div>
-  <div class="mb-3">
-    <label for="lblEndDate" class="form-label">End Date</label>
-    <input type="date" class="form-control" id="dtEndDate">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Is Active
-      </label>
+  <div class="card-footer text-body-secondary">
+    <div class="row">
+        <div class="col-6 d-grid">
+      <button type="submit" (click)="saveListing(listing)" class="btn btn-outline-success"><i class="bi bi-save" style="font-size: 1rem; color: rgb(229, 229, 236);"></i>Post Job</button>
+    </div>
+    <div class="col-6 d-grid">
+      <button type="button" routerLink="/listings" class="btn btn-outline-primary"><i class="bi bi-list-columns" style="font-size: 1rem; color: rgb(229, 229, 236);"></i>Job Listings
+       
+      </button>
+      </div>
     </div>
   </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Post Job</button>
   </div>
-</div>
+

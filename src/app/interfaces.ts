@@ -43,3 +43,26 @@ export interface QuestionnaireDetails{
  export interface User{
 
  }
+
+ export interface openAIModel
+ {
+   id: string,
+   object: string,
+   created: Date,
+   model: string,
+   system_fingerprint: string
+   choices: [{
+     index: number,
+     message: {
+       role: string,
+       content?: string ,
+     },
+     finish_reason: string
+   }],
+   usage: {
+     prompt_tokens?: number,
+     completion_tokens?: number,
+     total_tokens?: number
+   }
+ }
+ 

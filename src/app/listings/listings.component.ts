@@ -29,8 +29,6 @@ ngOnInit(): void {
 this.listings = listings;
 console.log('listings Data ' + this.listings);
 
-//this.listings = fakeListings;
-console.log('Fake Listings Data ' + this.listings);
     });
 
  //this.listingService.getListingsForUser();

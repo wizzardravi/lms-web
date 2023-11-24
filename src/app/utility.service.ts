@@ -13,6 +13,6 @@ export class UtilityService {
    }
 
    getAllHtmlElementTypes():Observable<HtmlElementTypes[]>{
-    return this.http.get<HtmlElementTypes[]>('/api/Utilities');
+    return this.http.get<HtmlElementTypes[]>('https://www.listmanagementapi.com/api/Utilities');
    }
 }

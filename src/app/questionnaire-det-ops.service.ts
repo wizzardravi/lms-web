@@ -17,15 +17,15 @@ export class QuestionnaireDetOpsService {
       
       this.questionnaireDetailOptions.questionnaireDetId = '' + id;
     }
-   return  this.http.post<number>('api/QuestionnaireDetailOps',this.questionnaireDetailOptions);
+   return  this.http.post<number>('https://www.listmanagementapi.com/api/QuestionnaireDetailOps',this.questionnaireDetailOptions);
     }
 
     saveQuestionnaireDetOp(questionnaireDetOp:QuestionnaireDetailOptions): Observable<number>{
-      return this.http.post<number>('api/QuestionnaireDetailOps',questionnaireDetOp);
+      return this.http.post<number>('https://www.listmanagementapi.com/api/QuestionnaireDetailOps',questionnaireDetOp);
     }
 
     getQuestionnaireDetOpsByQuestionnaireDetId(questionnaireDetId:string):Observable<QuestionnaireDetailOptions[]>{
-      return this.http.get<QuestionnaireDetailOptions[]>(`api/QuestionnaireDetailOps/${questionnaireDetId}`);
+      return this.http.get<QuestionnaireDetailOptions[]>('https://www.listmanagementapi.com/api/QuestionnaireDetailOps/${questionnaireDetId}');
     }
     
 }

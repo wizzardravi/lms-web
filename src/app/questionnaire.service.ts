@@ -11,14 +11,14 @@ export class QuestionnaireService {
   constructor(private http: HttpClient) { }
 
   getAllQuestionnaire(): Observable<QuestionnaireDetails[]>{
-    return this.http.get<QuestionnaireDetails[]>('api/Questionnaire');
+    return this.http.get<QuestionnaireDetails[]>('https://www.listmanagementapi.com/api/Questionnaire');
   }
 
   getQuestionnaire(listId:string): Observable<QuestionnaireDetails[]>{
-    return this.http.get<QuestionnaireDetails[]>(`api/Questionnaire/${listId}`);
+    return this.http.get<QuestionnaireDetails[]>('https://www.listmanagementapi.com/api/Questionnaire/${listId}');
   }
 
   saveQuestionnaire(questionnaire:Questionnaire): Observable<number>{
-    return this.http.post<number>('api/Questionnaire',questionnaire);
+    return this.http.post<number>('https://www.listmanagementapi.com/api/Questionnaire',questionnaire);
   }
 }

@@ -12,6 +12,7 @@ import { CreateQuestionnaireDetailsComponent } from './create-questionnaire-deta
 import { CreateQuestionnaireDetOpsComponent } from './create-questionnaire-det-ops/create-questionnaire-det-ops.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { OpenAiComponentComponent } from './open-ai-component/open-ai-component.component';
 
 const routes: Routes = [
   {path: 'listings', component: ListingsComponent, pathMatch:'full'},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'create-ques-det-ops', component: CreateQuestionnaireDetOpsComponent},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'respond-me', component: OpenAiComponentComponent},
   {path:'', redirectTo: '/home', pathMatch:'full'}
 ];
 

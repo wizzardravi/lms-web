@@ -26,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateQuestionnaireDetailsComponent } from './create-questionnaire-details/create-questionnaire-details.component';
 import { CreateQuestionnaireDetOpsComponent } from './create-questionnaire-det-ops/create-questionnaire-det-ops.component';
 import { LoginComponent } from './login/login.component';
+import { OpenAiComponentComponent } from './open-ai-component/open-ai-component.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     CreateQuestionnaireDetailsComponent,
     CreateQuestionnaireDetOpsComponent,
-    LoginComponent
+    LoginComponent,
+    OpenAiComponentComponent
   ],
   imports: [
     BrowserModule,

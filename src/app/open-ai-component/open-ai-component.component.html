@@ -1,12 +1,18 @@
 
 <div class="row">
+  <div class="col-12 d-grid">
+<button type="button" (click)="startStopRecording()" class="btn btn-outline-success"><i class="bi bi-record-btn" style="font-size: 1rem; color: rgb(229, 229, 236);"></i>{{btnRecordStopText}}</button>
+</div>
+</div>
+
+<!-- <div class="row">
   <div class="col-6 d-grid">
 <button type="button" (click)="startRecognition()" class="btn btn-outline-success"><i class="bi bi-record-btn" style="font-size: 1rem; color: rgb(229, 229, 236);"></i>Start Recording</button>
 </div>
 <div class="col-6 d-grid">
   <button type="button" (click)="stopRecognition()" class="btn btn-outline-primary"><i class="bi bi-sign-stop" style="font-size: 1rem; color: rgb(229, 229, 236);"></i>Stop Recording</button>
   </div>
-</div>
+</div> -->
 <div class="mb-3">
     <input type="text" [(ngModel)] = "txtInputText" class="form-control" id="txtInputText">
   </div>
@@ -21,7 +27,7 @@
 
 
 
-<div class="list-group">
+<!-- <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action" aria-current="true" *ngFor="let choice of openAIModel?.choices">
 <div class="d-flex w-100 justify-content-between">
 <h5 class="mb-1">{{choice.message.content}}</h5>
@@ -37,4 +43,14 @@
 
 
 
-</div>
+</div> -->
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action" aria-current="true" *ngFor="let kb of knowledgeBaseRelays">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"> Question - {{kb.Q}}</h5>
+      <small>{{openAIModel.created}}</small>
+      </div>
+      <h5 class="mb-1"> A - {{kb.A}}</h5>
+      </a>
+      </div>

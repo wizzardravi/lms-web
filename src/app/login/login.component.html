@@ -80,7 +80,7 @@
 
 <!-- Custom styles for this template -->
 
-<div class="d-flex align-items-center py-4 bg-body-tertiary">
+<div class="d-flex align-items-center py-4 bg-body-tertiary bg-light">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="check2" viewBox="0 0 16 16">
     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -134,7 +134,11 @@
 
 
 <main class="form-signin w-100 m-auto">
-<form>
+<!-- <form> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title text-bg-light">Login</h5>
@@ -142,12 +146,67 @@
         <img src="./../../assets/Google.png" alt="..." width="72" height="57"></h6>
       <p class="card-text">Just Login with your google account to continue!</p>
       <div class="d-grid">
-        <button class="btn btn-outline-primary" (click)="validateLogin()" type="button"><i class="bi bi-google" style="font-size: 1rem; color: rgb(229, 229, 236);">&nbsp; Login with Google</i></button>
+        <button class="btn btn-outline-primary" (click)="validateLogin()" type="button"><i class="bi bi-google" style="font-size: 1rem; color: rgb(19, 71, 204);">&nbsp; Login with Google</i></button>
         </div>
         </div>
         </div>
+        </div>
+
+        <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-bg-light">Login</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+              <img src="./../../assets/Google.png" alt="..." width="72" height="57"></h6>
+            <p class="card-text">Register with your google account to continue!</p>
+            <div class="d-grid">
+              <button class="btn btn-outline-primary" (click)="registerLogin()" type="button"><i class="bi bi-google" style="font-size: 1rem; color: rgb(229, 229, 236);">&nbsp; Login with Google</i></button>
+              </div>
+
+
+  
+  <div class="container-fluid">
+
+
+    <div class="mb-3">
+      <label for="lblListingName" class="form-label">TimeZone - Give 1 for cst, 2 for pst, 3 for est</label>
+      <input type="text" class="form-control" [(ngModel)]="knowledgeBase.timeZoneId" id="txtTimeZoneId" placeholder="Min Requirement?">
+    </div>
+
+
+    <div class="row">
+      <div class="col-6">
+      <label for="lblStartDate" class="form-label">Start Date</label>
+      <input type="date" [(ngModel)] = "knowledgeBase.startDate" class="form-control" id="dtStartDate">
+    </div>
+    <div class="col-6">
+      <label for="lblEndDate" class="form-label">End Date</label>
+      <input type="date" [(ngModel)] = "knowledgeBase.endDate" class="form-control" id="dtEndDate">
+    </div>
+    </div>
+
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="gridCheck" [(ngModel)] = "knowledgeBase.isValid">
+        <label class="form-check-label" for="gridCheck">
+          Is Valid
+        </label>
+      </div>
+    </div>
+    
+    <div class="col-12">
+      <button type="button" (click)="registerForKnowledgeBase(knowledgeBase)" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+
+              </div>
+              </div>
+</div>
+              </div>
+              </div>
 <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
-</form>
+<!-- </form> -->
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 

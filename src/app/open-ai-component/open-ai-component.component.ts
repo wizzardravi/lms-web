@@ -1,7 +1,8 @@
 import { Component, EventEmitter  } from '@angular/core';
 import { OpenAiService } from '../open-ai.service';
-import { openAIModel } from '../interfaces';
+import { ManageKey, openAIModel, KnowledgeBaseRelay } from '../interfaces';
 import { SpeechRecognitionService } from '../speech-recognition.service';
+import { KnowledgebaseServiceService } from '../knowledgebase-service.service';
 
 @Component({
   selector: 'app-open-ai-component',
@@ -11,51 +12,81 @@ import { SpeechRecognitionService } from '../speech-recognition.service';
 export class OpenAiComponentComponent {
   txtInputText! : string;
   openAIModel! : openAIModel;
+  manageKey! : ManageKey;
+  isRecording! : boolean;
+  btnRecordStopText! : string;
+  knowledgeBaseRelay : KnowledgeBaseRelay = {};
+  knowledgeBaseRelays : KnowledgeBaseRelay[] = [];
   
-constructor(private openaiservice:OpenAiService, private speechRecognitionService: SpeechRecognitionService){
+constructor(private openaiservice:OpenAiService, private speechRecognitionService: SpeechRecognitionService, private knowledgeBaseService : KnowledgebaseServiceService){
 }
 
 
 
 
 ngOnInit(): void {
-  // this.listingService.getListings().subscribe(
-  //   listings => console.log('listings  ' + listings),
-  //   err => console.error('Observer got an error: ' + err),
-  //   () => console.log('Observer got a complete notification')
-  //   );
- 
-  
-  }
+  this.isRecording = false;
+  this.btnRecordStopText = "Start Recording"
+  this.openaiservice.getApiKey('OPEN-API-KEY').subscribe(manageKey=>{
+this.manageKey = manageKey;
+  });
 
-  startRecognition() {
-    this.speechRecognitionService.startRecognition();
-    this.speechRecognitionService.speechResult.subscribe((result) => {
-      console.log('Speech Recognized:', result);
-      this.txtInputText = result;
-      // Do something with the recognized speech here
+  this.knowledgeBaseService.getKnowledgeBaseForUser().subscribe(
+    kbUserData => {
+      if(kbUserData[0].isValid){
+localStorage.setItem('kbUserValid', "true")
+      }
+      else{
+        localStorage.setItem('kbUserValid', "false")
+      }
     });
   }
 
-  stopRecognition() {
+  startRecording() {
+    this.btnRecordStopText = "Stop Recording"
+    this.speechRecognitionService.startRecognition();
+    this.speechRecognitionService.speechResult.subscribe((result) => {
+      this.txtInputText = result;
+      this.knowledgeBaseRelay = {};
+      this.knowledgeBaseRelay.Q =  this.txtInputText;
+      this.knowledgeBaseRelay.A =  '....';
+      this.getdata();
+    });
+  }
+
+  stopRecording() {
+    this.btnRecordStopText = "Start Recording";
     this.speechRecognitionService.stopRecognition();
   }
 
-  getdata(): void{
-    this.openaiservice.getOpenAIData(this.txtInputText).subscribe(
-      data => {
-        console.log(data);
-        
-        this.openAIModel = data;
-  //this.listings = listings;
-  //console.log('listings Data ' + this.listings);
-  
-  //this.listings = fakeListings;
-  //console.log('Fake Listings Data ' + this.listings);
-      });
+startStopRecording(){
+  this.isRecording = !this.isRecording;
 
+  if(this.isRecording){
+   this.startRecording();
+  }
+  else{
+   this.stopRecording();
+  }
+}
+
+  getdata(): void{
+    this.stopRecording();
+if(localStorage.getItem('kbUserValid') == "true"){
+        this.openaiservice.getOpenAIData(this.txtInputText).subscribe(
+          data => {
+            this.openAIModel = data;
+           
+      
+      this.knowledgeBaseRelay.A =  this.openAIModel.choices[0].message.content;
+       
+          });
+          this.knowledgeBaseRelays.push(this.knowledgeBaseRelay);  
+        }
+        else{
+          alert('Please log out and register or contact administrator');
+        }
+         
+        }
   }
 
-
-
-}

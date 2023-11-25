@@ -44,6 +44,16 @@ export interface QuestionnaireDetails{
 
  }
 
+ export interface KnowledgeBase{
+  knowledgeBaseId : number,
+  userId : number,
+  timeZoneId : number, 
+  startDate?:string,
+  endDate?:string,
+  isValid?:boolean,
+  providerUserId?:string
+}
+
  export interface openAIModel
  {
    id: string,
@@ -65,4 +75,18 @@ export interface QuestionnaireDetails{
      total_tokens?: number
    }
  }
+
+ export interface ManageKey{
+  manageKeyId : number,
+  manageKeyName : string,
+  manageKeyValue : string, 
+  manageKeyDescription?:string,
+  createdDate?:string
+
+}
+
+export interface KnowledgeBaseRelay{
+  Q?:string;
+  A?:string; 
+}
  

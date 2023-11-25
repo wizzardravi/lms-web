@@ -31,6 +31,7 @@ export class KnowledgebaseServiceService {
           if(user && token){
             this.id = user.uid;
             knowledgeBase.providerUserId = this.id;
+            knowledgeBase.isValid = false;
             this.http.post<number>('https://www.listmanagementapi.com/api/knowledgeBase', knowledgeBase).subscribe(value =>{
               observer.next(value);
             });

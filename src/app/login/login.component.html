@@ -136,16 +136,25 @@
 <main class="form-signin w-100 m-auto">
 <!-- <form> -->
 
+  <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <p>
-       <b> Artificial Intelligence(AI) plays a crucial role in simplifying complex tasks. 
+      
+        <h1 class="display-8"> Knowledge Base </h1>
+        <hr>
+        <p class="lead">
+        <b > Artificial Intelligence(AI) plays a crucial role in simplifying complex tasks. 
 Now with the best ever trained <i>Artifical Intelligence</i> data sets trained from <i>books,
 articles, websites and a broad spectrum of sources</i>, feel confident to answer what you see!
 Yes,<i> engage more on the fly</i> when hear a question with just a button touch !
 
-Want to know more, fell free to register and set up a demo.</b>
-      </p>
+Want to know more, fell free to register and set up a demo.</b> </p>
+<hr>
+    </div>
+    <div class="row">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.youtube.com/embed/HXUHkpvmcnQ" title="Artificial Intelligence Knowledge Base v 2 0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
     </div>
     <div class="row">
       <div class="col">
@@ -163,57 +172,8 @@ Want to know more, fell free to register and set up a demo.</b>
         </div>
         </div>
 
-        <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title text-bg-light">Register</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              <img src="./../../assets/Google.png" alt="..." width="72" height="57"></h6>
-            <p class="card-text">Register with your google account to continue!</p>
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" (click)="registerLogin()" type="button"><i class="bi bi-google" style="font-size: 1rem; color: rgb(5, 83, 5);">&nbsp; Register with Google</i></button>
               </div>
-
-
-  
-  <div class="container-fluid">
-
-
-    <div class="mb-3">
-      <label for="lblListingName" class="form-label">TimeZone - Give 1 for cst, 2 for pst, 3 for est</label>
-      <input type="text" class="form-control" [(ngModel)]="knowledgeBase.timeZoneId" id="txtTimeZoneId" placeholder="Min Requirement?">
-    </div>
-
-
-    <div class="row">
-      <div class="col-6">
-      <label for="lblStartDate" class="form-label">Start Date</label>
-      <input type="date" [(ngModel)] = "knowledgeBase.startDate" class="form-control" id="dtStartDate">
-    </div>
-    <div class="col-6">
-      <label for="lblEndDate" class="form-label">End Date</label>
-      <input type="date" [(ngModel)] = "knowledgeBase.endDate" class="form-control" id="dtEndDate">
-    </div>
-    </div>
-
-
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" id="gridCheck" [(ngModel)] = "knowledgeBase.isValid">
-        <label class="form-check-label" for="gridCheck">
-          Is Valid
-        </label>
-      </div>
-    </div>
-    
-    <div class="col-12">
-      <button type="button" (click)="registerForKnowledgeBase(knowledgeBase)" class="btn btn-primary">Register</button>
-    </div>
-  </div>
-
-              </div>
-              </div>
-</div>
+       
               </div>
               </div>
 <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>

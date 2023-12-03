@@ -41,7 +41,13 @@ export interface QuestionnaireDetails{
  }
 
  export interface User{
-
+  displayName?: string | null,
+  email?: string | null,
+  phoneNumber?: string | null,
+  photoURL?: string | null,
+  providerId?: string | null,
+  uid?: string | null,
+  providerUserId?:string | null
  }
 
  export interface KnowledgeBase{
@@ -90,3 +96,35 @@ export interface KnowledgeBaseRelay{
   A?:string; 
 }
  
+
+
+
+export enum MessageRoles {
+  SYSTEM = 'system',
+  USER = 'user',
+  ASSISTANT = 'assistant',
+  ERROR = 'error',
+  }
+  export interface IMessage {
+  content: string;
+  role: 'user' | 'assistant' | 'system' | 'error';
+  }
+  export interface IUsage {
+  prompt_tokens: number;
+  completion_tokens: number;
+  total_tokens: number;
+  }
+  export interface IChoice {
+  message?: IMessage;
+  finish_reason: string;
+  index: number;
+  delta?: IMessage;
+  }
+  export interface ICompletion {
+  id: string;
+  object: string;
+  created: number;
+  model: string;
+  usage: IUsage;
+  choices: IChoice[];
+  }

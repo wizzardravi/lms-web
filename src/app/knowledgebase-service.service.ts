@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { KnowledgeBase } from './interfaces';
+import { KnowledgeBase, User } from './interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -21,7 +21,10 @@ const httpOptionsWithAuthToken = token => ({headers: new HttpHeaders({
 })
 export class KnowledgebaseServiceService {
   id!:string;
+  
   constructor(private http: HttpClient, private auth: AngularFireAuth) { }
+
+
 
   saveKnowledgeBase(knowledgeBase:KnowledgeBase): Observable<number>
   {
